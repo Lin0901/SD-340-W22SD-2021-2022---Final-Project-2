@@ -146,10 +146,7 @@ namespace SD_340_W22SD_2021_2022___Final_Project_2.Controllers
                     return Unauthorized("Only developers assigned to this project can watch the tasks");
                 }
 
-                if (ticket.TaskWatchers.FirstOrDefault(u => u.Id == currentUser.Id) == null)
-                {
-                    ticket.TaskWatchers.Add(currentUser);
-                }
+                
                 else
                 {
                     ticket.TaskWatchers.Remove(currentUser);
